@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 attempts = 10000
 
 print('Lets compare damage output.\n')
-user_input1 = input('What are we rolling first? ')
+user_input1 = input('What are we rolling first? (ie 2d6+2d4+5')
 user_input2 = input('\nWhat are we rolling next? ')
 
 user_damage1 = user_input1.split('+')
