@@ -2,10 +2,10 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
-attempts = 10000
+attempts = 1000
 
 print('Lets compare damage output.\n')
-user_input1 = input('What are we rolling first? (ie 2d6+2d4+5')
+user_input1 = input('What are we rolling first? (ie 2d6+2d4+5) ')
 user_input2 = input('\nWhat are we rolling next? ')
 
 user_damage1 = user_input1.split('+')
@@ -42,16 +42,19 @@ for i in range(attempts):
             attempt_damage2 += int(chunk)
     results2.append(attempt_damage2)
 
-#plotting
-plt.clf()
-plt.hist(results1, bins = max(results1)-min(results1), color = 'red', alpha = 0.5, zorder = 3, label = user_input1)
-plt.hist(results2, bins = max(results2)-min(results2), color = 'blue', alpha = 0.5, zorder = 3, label = user_input2)
-plt.grid(zorder = 0)
-plt.legend()
-plt.show()
-
 print('\n')
 print('\nAnalysis of {}: '.format(user_input1))
 print('Low|', min(results1), '<--', round(np.mean(results1)), '-->', max(results1), '|High')
 print('\nAnalysis of {}: '.format(user_input2))
 print('Low|', min(results2), '<--', round(np.mean(results2)), '-->', max(results2), '|High')
+
+#plotting
+plt.clf()
+plt.hist(results1, bins = max(results1)-min(results1), color = 'red', alpha = 0.5, zorder = 3, label = user_input1)
+plt.hist(results2, bins = max(results2)-min(results2), color = 'blue', alpha = 0.5, zorder = 3, label = user_input2)
+plt.grid(zorder = 0)
+plt.xlabel('Amount of Damage')
+plt.ylabel('Probability Density')
+plt.legend()
+plt.show()
+
