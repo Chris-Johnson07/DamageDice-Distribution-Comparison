@@ -54,7 +54,7 @@ plt.hist(results1, bins = max(results1)-min(results1), color = 'red', alpha = 0.
 plt.hist(results2, bins = max(results2)-min(results2), color = 'blue', alpha = 0.5, zorder = 3, label = user_input2)
 plt.grid(zorder = 0)
 plt.xlabel('Amount of Damage')
-plt.ylabel('Probability Density')
+plt.ylabel('# of Occurrences in {} Attempts'.format(attempts))
 plt.legend()
 plt.show()
 
